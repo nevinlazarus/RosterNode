@@ -1,14 +1,15 @@
 include head
 
 div.container(style="width:50%")
-  div.row(style="padding:5px")
-    label.col-md-3 Upload text file
-  div.row(style="padding:5px")
-    input#fileName.col-md-6(type="file")
-  div.row(style="padding:5px")
-    button#upload.pull-left Upload
-  div.row(style="padding:5px")
-    button#run.pull-left Run
+  form(action="/", method="post", enctype="multipart/form-data")
+    div.row(style="padding:5px")
+      label.col-md-3 Upload text file
+    div.row(style="padding:5px")
+      input#fileName.col-md-6(type="file", name="fileName")
+    div.row(style="padding:5px")
+      button#upload.pull-left Upload
+    div.row(style="padding:5px")
+      button#run.pull-left Run
 
   div.row(style="padding:5px")
     label#lblReady #{ready}

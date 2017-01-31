@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
+var routes = require('./routes/index');
 
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
@@ -17,10 +18,8 @@ var upload = multer({ storage : storage}).single('fileName');
 
 app.set('view engine', 'pug');
 app.set('views', 'views');
+app.use('/', routes);
 
-app.get('/', function(req, res) {
-  res.render('index', {ready: "Not ready"});
-});
 
 app.listen(8080);
 // File system

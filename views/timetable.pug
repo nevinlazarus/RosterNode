@@ -1,0 +1,7 @@
+include head
+
+- var days = ["mon", "tue", "wed", "thur", "fri"];
+each item in days
+  - for (var x = 8; x <= 17; ++x)
+    -  if (x < 10) x = '0' + x
+    button= item + x

@@ -19,7 +19,7 @@ var upload = multer({ storage : storage}).single('fileName');
 app.set('view engine', 'pug');
 app.set('views', 'views');
 app.use('/', routes);
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(8080);
 // File system
